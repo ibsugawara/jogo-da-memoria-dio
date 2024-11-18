@@ -1,0 +1,2 @@
+# Jogo da Memória - Desafio DIO #
+Este projeto é um jogo da memória, onde o objetivo é encontrar os pares de cartas correspondentes. Ele foi desenvolvido como parte de um desafio no curso da DIO, utilizando HTML, CSS e JavaScript.

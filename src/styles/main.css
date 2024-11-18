@@ -1,0 +1,140 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #F6D6D6;
+    user-select: none;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: radial-gradient(
+        circle,
+        #a0eebd 0%, 
+        #f6f7c4 30%, 
+        #f6d6d6 70%, 
+        #7bd3ea 100%);
+
+    padding: 40px 60px ;
+}
+
+h2 {
+    font-size: 3em;
+    color:#ffc0cb;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-shadow: 
+    -1px -1px 0 gray,  
+     1px -1px 0 gray,
+    -1px  1px 0 gray,
+     1px  1px 0 gray; /* Simula a borda */
+}
+
+.reset {
+    padding: 15px 20px;
+    width: 100%;
+    color: #000000;
+    background-color: #ffffff;
+    border: none;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.reset:focus {
+    color: #ec38bc;
+    background-color: #262809;
+}
+
+.game {
+    border: 2px solid #F6F7C4;
+    width: 434px;
+    height: 434px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.item {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+
+    font-size: 3em;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+}
+
+.item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #404040;
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+.item.boxOpen {
+    transform: rotateY(0deg);
+}
+
+.boxOpen::after,
+.boxMatch::after{
+    transform: rotate(180deg);
+    display: none;
+}
+
+.alert {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .alert-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+  }
+  
+  .alert p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-family: 'Calibri';
+  }
+  
+  .alert button {
+    padding: 8px 16px;
+    background-color: #ffc0cb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .alert button:hover {
+    background-color: #e6a1ad;
+  }
